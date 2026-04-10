@@ -232,7 +232,7 @@ export default function Dashboard() {
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="city" angle={-45} textAnchor="end" height={80} />
                 <YAxis />
-                <Tooltip formatter={(value) => `${value.toLocaleString()} ₽`} />
+                <Tooltip formatter={(value) => typeof value === 'number' ? `${value.toLocaleString()} ₽` : value} />
                 <Line type="monotone" dataKey="revenue" stroke="#f59e0b" />
               </LineChart>
             </ResponsiveContainer>
